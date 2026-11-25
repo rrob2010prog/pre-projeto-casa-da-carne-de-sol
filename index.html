@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pré-projeto · Casa da Carne de Sol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--preto:#141010;--vermelho:#b3171d;--dourado:#d6a84a;--fundo:#f7f2ec;--papel:#fffdf9;--texto:#221816;--suave:#5f514b;--linha:#eadfd3;--verde:#1f7a45;--verde-claro:#eef8f1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Nunito,system-ui,sans-serif;background:var(--fundo);color:var(--texto);line-height:1.55}
+  a{color:var(--vermelho)}
+  .capa{background:radial-gradient(circle at 50% -10%,#4a1412,var(--preto) 70%);color:#fff;padding:44px 20px 40px;text-align:center}
+  .capa small{color:var(--dourado);font-weight:800;letter-spacing:.12em;font-size:12px;text-transform:uppercase}
+  .capa h1{font-family:Oswald,Impact,sans-serif;font-size:clamp(30px,8vw,46px);text-transform:uppercase;line-height:1.1;margin:10px 0}
+  .capa p{max-width:580px;margin:0 auto;opacity:.9}
+  main{max-width:780px;margin:0 auto;padding:0 16px 40px}
+  section{margin-top:36px}
+  h2{font-family:Oswald,Impact,sans-serif;font-weight:500;text-transform:uppercase;font-size:24px;letter-spacing:.02em;margin-bottom:12px}
+  h2 span{color:var(--vermelho)}
+  .intro{color:var(--suave);margin-bottom:14px}
+  .grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .card{background:var(--papel);border:1px solid var(--linha);border-radius:16px;padding:16px}
+  .card h3{font-size:16px;margin-bottom:4px}
+  .card p{color:var(--suave);font-size:14.5px}
+  .bom .card{border-left:4px solid var(--verde)}
+  .num{display:inline-flex;flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:var(--vermelho);color:#fff;font-weight:800;font-size:13px;align-items:center;justify-content:center;margin-right:8px}
+  .dor{background:var(--papel);border:1px solid var(--linha);border-radius:18px;padding:18px;margin-bottom:12px}
+  .dor h3{font-size:17px;line-height:1.4}
+  .dor h3 .num{vertical-align:-6px}
+  .dor .hoje{margin-top:8px;color:var(--suave);font-size:14.5px}
+  .dor .faz{margin-top:10px;font-size:14.5px}
+  .dor .faz b,.dor .hoje b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+  .dor .faz ul{margin:4px 0 0 20px}
+  .dor .faz li{margin-bottom:3px}
+  .ganho{margin-top:10px;background:var(--verde-claro);color:#1d5c37;border-radius:10px;padding:8px 12px;font-size:14px;font-weight:700}
+  .tag{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:middle;background:#f1e6d6;color:#6b4c1e}
+  .tag.auto{background:#e7eefc;color:#1f3f8a}
+  table{width:100%;border-collapse:collapse;background:var(--papel);border-radius:14px;overflow:hidden;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linha);vertical-align:top}
+  th{background:var(--preto);color:#fff;font-weight:700;font-size:13px}
+  .tabela{overflow-x:auto;border-radius:14px;border:1px solid var(--linha)}
+  .passos{counter-reset:p;list-style:none}
+  .passos li{counter-increment:p;position:relative;padding:0 0 16px 44px}
+  .passos li:before{content:counter(p);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--preto);color:var(--dourado);font-weight:800;display:flex;align-items:center;justify-content:center}
+  .passos b{display:block}
+  .passos span{color:var(--suave);font-size:14.5px}
+  .fases{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .fase{background:var(--papel);border:1px solid var(--linha);border-radius:16px;padding:16px}
+  .fase small{color:var(--vermelho);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+  .fase h3{font-size:16px;margin:2px 0 6px}
+  .fase ul{margin-left:18px;color:var(--suave);font-size:14px}
+  .antes-depois{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .antes-depois div{border-radius:14px;padding:14px;font-size:14px}
+  .antes{background:#fbe7e6}.depois{background:var(--verde-claro)}
+  .antes b,.depois b{display:block;margin-bottom:6px;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+  .cta{background:var(--preto);color:#fff;border-radius:20px;padding:24px;text-align:center;margin-top:36px}
+  .cta h2{color:#fff}
+  .cta p{opacity:.88;max-width:540px;margin:0 auto 16px}
+  .btn{display:inline-block;background:var(--vermelho);color:#fff;text-decoration:none;font-weight:800;border-radius:14px;padding:14px 20px;margin:4px}
+  .nota{font-size:13px;color:var(--suave);margin-top:10px}
+  footer{text-align:center;color:var(--suave);font-size:13px;padding:24px 16px 40px}
+  @media (max-width:520px){.antes-depois{grid-template-columns:1fr}}
+  @page{size:A4;margin:12mm}
+  @media print{
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body{background:#fff}
+    .dor,.card,.fase,.antes-depois,.cta,tr,.passos li{break-inside:avoid}
+    h2{break-after:avoid}
+    section{margin-top:22px}
+  }
+</style>
+</head>
+<body>
+<div class="capa">
+  <small>Pré-projeto · Lumina Serviços Digitais</small>
+  <h1>Casa da Carne de Sol<br>As 3 lojas no Google, o pedido chegando pronto</h1>
+  <p>Que bom que você gostou da ideia! Antes de montar o exemplo com os cortes, olhei com calma como a Casa da Carne
+  de Sol aparece hoje no Google e no Instagram. Aqui está o que encontrei e o que dá para fazer, por etapas: as 3
+  lojas certinhas no Google, os produtos e os preços à vista, o cliente montando o pedido sozinho e a equipe
+  recebendo tudo organizado no WhatsApp.</p>
+</div>
+
+<main>
+  <section class="bom">
+    <h2>O que a loja <span>já tem de forte</span></h2>
+    <div class="grade">
+      <div class="card"><h3>3 lojas em São Luís</h3><p>Matriz na Curva do 90, filial no Cohama e filial no Planalto Pingão.</p></div>
+      <div class="card"><h3>Aberto todos os dias</h3><p>De segunda a domingo, com delivery pelo WhatsApp.</p></div>
+      <div class="card"><h3>Mix que vende</h3><p>Carne de sol e alimentos artesanais: pimenta, manteiga de garrafa, queijo, linguiça e bebidas.</p></div>
+      <div class="card"><h3>Público no Instagram</h3><p>Mais de 2 mil seguidores que já conhecem a loja.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>As dores e <span>o que muda com a Lumina</span></h2>
+    <p class="intro">Cada ponto abaixo foi visto em 25/11 na ficha do Google, na busca do Google e no Instagram da
+    loja. Para cada um: como está hoje, o que a Lumina faz e o benefício depois de resolvido.</p>
+
+    <div class="dor">
+      <h3><span class="num">1</span>A matriz está quase invisível no Google <span class="tag">Google</span></h3>
+      <div class="hoje"><b>Hoje</b>A ficha da matriz tem só 1 avaliação. O endereço mostra apenas o bairro e o CEP
+      (Recanto Vinhais), sem rua nem número, e o botão "Site" leva ao Instagram.</div>
+      <div class="faz"><b>O que a Lumina faz (Google Meu Negócio)</b><ul>
+        <li>Endereço completo, fotos da loja e dos produtos, horários e área de entrega.</li>
+        <li>Produtos cadastrados na ficha, com foto.</li>
+        <li>Botão "Site" levando direto ao catálogo de pedidos.</li>
+      </ul></div>
+      <div class="ganho">Benefício: quem encontra a ficha sabe onde fica, vê o que tem e já pode pedir.</div>
+    </div>
+
+    <div class="dor">
+      <h3><span class="num">2</span>As filiais não aparecem na busca <span class="tag">Google</span></h3>
+      <div class="hoje"><b>Hoje</b>Na busca "Casa da Carne de Sol São Luís" só aparece a matriz. Quem mora perto do
+      Cohama ou do Planalto Pingão não descobre que tem uma loja ali.</div>
+      <div class="faz"><b>O que a Lumina faz</b><ul>
+        <li>Ficha do Google para cada filial (nova ou corrigida), com endereço, fotos e horário de cada loja.</li>
+        <li>As 3 fichas ligadas ao mesmo catálogo.</li>
+      </ul></div>
+      <div class="ganho">Benefício: o cliente acha a loja mais perto de casa.</div>
+      <p class="nota">A ficha nova só aparece depois da verificação do próprio Google (vídeo ou código), feita pela loja.</p>
+    </div>
+
+    <div class="dor">
+      <h3><span class="num">3</span>Concorrente forte e uma loja "fechada" com o mesmo nome <span class="tag">Google</span></h3>
+      <div class="hoje"><b>Hoje</b>Na mesma busca aparece um concorrente com mais de 900 avaliações e outra "Casa da
+      Carne de Sol" marcada como permanentemente fechada. Quem procura pode achar que a loja fechou ou ir ao concorrente.</div>
+      <div class="faz"><b>O que a Lumina faz</b><ul>
+        <li>Fichas completas e com fotos, para a loja certa se destacar da homônima fechada.</li>
+        <li>Mensagem pronta para a equipe pedir avaliação e QR code no balcão das 3 lojas.</li>
+      </ul></div>
+      <div class="ganho">Benefício: avaliações reais começam a aparecer, e o cliente vê que a loja está aberta e ativa.</div>
+    </div>
+
+    <div class="dor">
+      <h3><span class="num">4</span>Dois nomes diferentes <span class="tag">Marca</span></h3>
+      <div class="hoje"><b>Hoje</b>No Instagram a loja se chama "Casa de Carnes SLZ"; no Google, "Casa da Carne de Sol".
+      O cliente fica sem saber se é o mesmo lugar.</div>
+      <div class="faz"><b>O que a Lumina faz</b><ul>
+        <li>Sugerimos qual nome usar no Google, no Instagram e no catálogo. A decisão é sua.</li>
+        <li>O mesmo nome e a mesma identidade em todos os canais.</li>
+      </ul></div>
+      <div class="ganho">Benefício: o cliente reconhece a loja em qualquer lugar e não confunde com outra.</div>
+    </div>
+
+    <div class="dor">
+      <h3><span class="num">5</span>O pedido é feito todo na conversa <span class="tag">Catálogo</span></h3>
+      <div class="hoje"><b>Hoje</b>O delivery é por um QR code do WhatsApp, sem lista de produtos nem preços. São 3
+      lojas e 2 números, e a equipe responde tudo à mão: o que tem, quanto custa, a taxa e o endereço.</div>
+      <div class="faz"><b>O que a Lumina faz</b><ul>
+        <li>Catálogo online com a marca da loja: carne de sol, linguiça, queijo, manteiga de garrafa, pimenta e bebidas, com preço.</li>
+        <li>O cliente escolhe a loja mais perto, entrega ou retirada e o pagamento.</li>
+        <li>O pedido chega pronto no WhatsApp: itens, total estimado, endereço e pagamento.</li>
+        <li>Regra do peso escrita no catálogo: a loja confirma o valor final depois da pesagem.</li>
+      </ul></div>
+      <div class="ganho">Benefício: menos conversa por pedido, menos erro de anotação e venda sem comissão de aplicativo.</div>
+    </div>
+
+    <div class="dor">
+      <h3><span class="num">6</span>O Instagram está parado <span class="tag">Instagram</span></h3>
+      <div class="hoje"><b>Hoje</b>As publicações mais recentes do feed são de dezembro de 2023. Quem chega pelo perfil
+      não vê os produtos de hoje nem as ofertas.</div>
+      <div class="faz"><b>O que a Lumina faz</b><ul>
+        <li>12 posts por mês com os produtos, as ofertas e as 3 lojas.</li>
+        <li>Bio e destaques levando ao catálogo.</li>
+      </ul></div>
+      <div class="ganho">Benefício: o perfil volta a mostrar uma loja ativa e leva o seguidor ao pedido.</div>
+    </div>
+
+    <div class="dor">
+      <h3><span class="num">7</span>Dezembro chegando, sem canal de encomendas <span class="tag">Catálogo</span></h3>
+      <div class="hoje"><b>Hoje</b>Fim de ano é época de carne de sol e de pedidos grandes para as festas, e encomenda
+      por conversa costuma gerar fila e dúvida de data.</div>
+      <div class="faz"><b>O que a Lumina faz</b><ul>
+        <li>Seção de Natal e Ano Novo no catálogo, com data limite para encomendar.</li>
+      </ul></div>
+      <div class="ganho">Benefício: dezembro organizado, com as encomendas por escrito.</div>
+    </div>
+
+    <div class="dor">
+      <h3><span class="num">8</span>Mensagem repetida e fora do horário <span class="tag auto">Atendente virtual</span></h3>
+      <div class="hoje"><b>Hoje</b>"Que horas fecha?", "entrega no meu bairro?", "qual loja é mais perto?": as mesmas
+      perguntas chegam nos 2 números, e quem manda mensagem depois que a loja fecha fica sem resposta.</div>
+      <div class="faz"><b>O que a Lumina faz</b><ul>
+        <li>Atendente virtual no WhatsApp, treinado com as informações das 3 lojas.</li>
+        <li>Responde horário, endereços, bairros, taxa e pagamento, e manda o catálogo.</li>
+        <li>Passa para a equipe quando é encomenda especial ou dúvida que precisa de gente.</li>
+      </ul></div>
+      <div class="ganho">Benefício: nenhum cliente fica sem resposta, e a equipe fica livre para atender no balcão.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Resumo: <span>dor, solução e benefício</span></h2>
+    <div class="tabela"><table>
+      <tr><th>Dor</th><th>Solução</th><th>Benefício</th></tr>
+      <tr><td>Matriz quase invisível no Google</td><td>Ficha completa + botão para o catálogo</td><td>Quem encontra já pode pedir</td></tr>
+      <tr><td>Filiais fora da busca</td><td>Ficha para cada filial</td><td>Cliente acha a loja mais perto</td></tr>
+      <tr><td>Homônima "fechada" e concorrente forte</td><td>Fichas completas + pedido de avaliação</td><td>Loja ativa e com avaliações reais</td></tr>
+      <tr><td>Dois nomes</td><td>Um nome só em todos os canais</td><td>Marca reconhecida</td></tr>
+      <tr><td>Pedido todo na conversa</td><td>Catálogo com pedido no WhatsApp</td><td>Menos conversa, sem comissão</td></tr>
+      <tr><td>Instagram parado</td><td>12 posts por mês + bio no catálogo</td><td>Perfil ativo que leva ao pedido</td></tr>
+      <tr><td>Encomendas de fim de ano</td><td>Seção de Natal e Ano Novo</td><td>Dezembro organizado</td></tr>
+      <tr><td>Pergunta repetida e fora do horário</td><td>Atendente virtual</td><td>Resposta a qualquer hora</td></tr>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Como fica <span>na prática</span></h2>
+    <div class="antes-depois">
+      <div class="antes"><b>Hoje</b>O cliente procura no Google, acha só a matriz, sem endereço completo, e ainda vê uma "Casa da Carne de Sol" fechada. Se chega ao WhatsApp, pergunta o que tem e quanto custa e espera a resposta.</div>
+      <div class="depois"><b>Com a Lumina</b>O cliente acha a loja mais perto no Google ou no Instagram, abre o catálogo, escolhe os produtos e toca em enviar. A equipe recebe o pedido pronto, pesa e confirma o valor.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Por onde <span>começar</span></h2>
+    <p class="intro">Dá para fazer tudo de uma vez ou por etapas, no ritmo da loja. A sugestão:</p>
+    <div class="fases">
+      <div class="fase"><small>Etapa 1</small><h3>Google das 3 lojas e pedido</h3><ul><li>Ficha da matriz corrigida</li><li>Fichas do Cohama e do Planalto Pingão</li><li>Um nome só</li><li>Catálogo com pedido no WhatsApp</li><li>Seção de encomendas de fim de ano</li><li>Mensagem e QR code de avaliação</li></ul></div>
+      <div class="fase"><small>Etapa 2</small><h3>Instagram de volta</h3><ul><li>12 posts por mês</li><li>Ofertas e produtos da semana</li><li>Bio e destaques no catálogo</li></ul></div>
+      <div class="fase"><small>Etapa 3</small><h3>Atendimento a qualquer hora</h3><ul><li>Atendente virtual no WhatsApp</li><li>Endereços das 3 lojas na resposta</li><li>Passa para a equipe quando precisa</li></ul></div>
+    </div>
+    <p class="nota">Com dezembro chegando, a seção de encomendas de fim de ano entra junto com a Etapa 1.</p>
+  </section>
+
+  <section>
+    <h2>Como a gente <span>trabalha</span></h2>
+    <ol class="passos">
+      <li><b>Conversa rápida (20 minutos)</b><span>Entendemos os produtos mais vendidos, como funcionam as 3 lojas e o delivery.</span></li>
+      <li><b>Exemplo com a cara da loja</b><span>Montamos uma prévia do catálogo com os seus produtos para você testar no celular antes de decidir.</span></li>
+      <li><b>No ar por etapas</b><span>Primeiro o Google e o pedido; depois o Instagram e o atendimento.</span></li>
+      <li><b>Acompanhamento</b><span>Preço, produto e oferta mudam pelo WhatsApp com a Lumina, sem ninguém da equipe mexer em nada técnico.</span></li>
+    </ol>
+    <p class="nota">As contas do Google, do Instagram e da Meta ficam sempre no nome da loja. Mensagem automática só
+    para clientes que autorizarem, como pede a LGPD.</p>
+  </section>
+
+  <div class="cta">
+    <h2>Próximo passo</h2>
+    <p>Quando você olhar, me diz por onde quer começar. O investimento de cada etapa eu apresento numa conversa
+    rápida, por WhatsApp ou Google Meet, de acordo com o que fizer sentido para a Casa da Carne de Sol.</p>
+    <a class="btn" href="https://wa.me/5511954746914?text=Oi%20Robinson%2C%20vi%20o%20pr%C3%A9-projeto%20da%20Casa%20da%20Carne%20de%20Sol" target="_blank" rel="noopener">Falar com o Robinson</a>
+  </div>
+</main>
+
+<footer>Pré-projeto preparado por Robinson · Lumina Serviços Digitais · novembro de 2026<br>
+Documento de apresentação. Nada foi publicado em nome da Casa da Carne de Sol.</footer>
+</body>
+</html>
